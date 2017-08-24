@@ -244,6 +244,18 @@ public class FabToolbar extends FrameLayout {
         }
     }
 
+    public void expandFab(boolean shouldAnimate){
+        mFabType = FAB_EXPAND;
+
+        if(shouldAnimate)
+            expandFab();
+        else{
+            mFab.setVisibility(View.INVISIBLE);
+            mFabExpandLayout.setVisibility(View.VISIBLE);
+        }
+
+    }
+
     public void contractFab() {
         if(!isFabExpanded()){
             return;
